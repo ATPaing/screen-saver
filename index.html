@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Saver</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+   <div class="main-screen flex-column" id="mainScreen">
+     <div class="first-paragraph">
+        <label class="text" id="countDown">Set ur time to start</label>
+        <span id="span-el"></span>
+     </div>
+     <div class="flex-row" id="input-section">
+        <input type="number" id="secondInputField" >
+        <label class="second">Second(s)</label>
+     </div>
+     <div>
+        <button id="startBtn">Start</button>
+     </div>
+   </div>
+
+   <div class="screen-saver display-none" id="screenSaver">
+
+    <div class="animation ">
+      <div class="screen flex-row">
+       <div class="s1 panel ">S</div>
+       <div class="c panel">C</div>
+       <div class="r1 panel">R</div>
+       <div class="e1 panel">E</div>
+       <div class="e2 panel">E</div>
+       <div class="n panel">N</div>
+      </div>
+      <div class="saver flex-row">
+       <div class="s2 panel">S</div>
+       <div class="a panel">A</div>
+       <div class="v panel">V</div>
+       <div class="e3 panel">E</div>
+       <div class="r2 panel">R</div>
+      </div>
+   </div>
+  </div>
+    <script src="main.js"></script>
+  </body>

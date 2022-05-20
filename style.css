@@ -1,0 +1,192 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 800px;
+  transition:all 360ms linear;
+}
+/* Utility Classes */
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.display-none{
+  display: none;
+}
+.background-color-black{
+  background-color: black;
+}
+/* Styling */
+.first-paragraph{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.8em;
+  gap: .5em;
+}
+.text,.second{
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-image: linear-gradient( hsl(140 70% 40%), hsl(200 70% 40%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+span{
+  font-size: 2.5rem;
+  color: red;
+}
+input[type=number]{
+  appearance: textfield;
+  width: 50px;
+  height: 30px;
+  margin-right: .5em;
+  background-image: linear-gradient( hsl(140 70% 40%), hsl(200 70% 40%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  font-size: 1.3rem;
+  padding-block: .9em;
+}
+input[type=number]:focus{
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.second{
+ font-size: 1rem;
+ margin-bottom: 0;
+ line-height: 30px;
+}
+button{
+  margin-top: 1.5em;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient( hsl(140 70% 50%), hsl(200 70% 50%));
+  color: black;
+  font-size: 1.25rem;
+  box-shadow:
+   -8px -8px 16px hsl(0 0% 100%/.5),
+   8px 8px 16px hsl(0 0% 0%/.3),
+   inset 0 0 35px hsl(0 0% 100%/.8);
+}
+button:hover{
+ opacity: .8;
+ transform: scale(.95);
+}
+button:focus{
+  outline: none;
+}
+button:target{
+  transform: scale(1);
+}
+/* for screen-saver */
+.screen-saver{
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.animation{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  animation: moveUpDown 20s linear 1.7s infinite ;
+}
+@keyframes moveUpDown {
+  15%{
+    transform: translateY(-200%) translateX(-50%) ;
+  }
+  30%{
+    transform: translateY(100%) translateX(-50%) ;
+  }
+  45%{
+    transform: translateX(30%) translateY(-50%);
+  }
+  60%{
+   transform: translateX(-35%) translateY(-200%);
+  }
+  75%{
+   transform: translateX(-140%) translateY(-50%)
+  }
+  90%{
+   transform: translateY(100%) translateX(-50%)
+  }
+  100%{
+   transform: translateY(-50%) translateX(-50%);
+  }
+
+}
+
+.screen{
+  margin:0 auto;
+  margin-bottom: 1em;
+  gap: 1em;
+  transform: translateX(-180%);
+  animation: moveRight 1.5s linear forwards;
+  opacity: 0;
+}
+@keyframes moveRight {
+ to{
+   opacity: 1;
+   transform: translateX(0);
+ }
+}
+.saver{
+  margin: 0 auto;
+  gap: 1em;
+  transform: translateX(180%);
+  animation: moveLeft 1.5s linear forwards;
+  opacity: 0;
+}
+@keyframes moveLeft {
+ to{
+   opacity: 1;
+   transform: translateX(0);
+ }
+}
+.panel{
+  width: clamp(15px,2vw,50px);
+  height: clamp(15px,2vw,50px);
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem,2vw,2rem);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background-image: linear-gradient(red,blue);
+  background-size: cover;
+}
+.panel::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(35px);
+  background-color: white;
+}
